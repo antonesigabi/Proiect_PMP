@@ -1,5 +1,7 @@
 #include <LiquidCrystal.h>
-LiquidCrystal lcd(11, 9, 6, 5, 4, 3);
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+
+int b1;
 
 //Variabile ajutatoare pentru claritatea codului
 #define pin_RW 10
@@ -21,8 +23,6 @@ LiquidCrystal lcd(11, 9, 6, 5, 4, 3);
 #define jump_6 8
 #define jump_7 9
 #define jump_8 10
-
-
 
 
 
@@ -217,8 +217,8 @@ void setup() {
   digitalWrite(pin_RW, LOW);
   pinMode(pin_Potentiometru, OUTPUT);
   digitalWrite(pin_Potentiometru, LOW);
-  pinMode(2, INPUT);
-  digitalWrite(2, HIGH);
+  
+  pinMode(4, INPUT_PULLUP);
 
   attachInterrupt(0, buttonPush, FALLING);
   
